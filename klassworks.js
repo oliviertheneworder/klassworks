@@ -355,6 +355,21 @@ $(document).ready(function () {
     if ($('.product-extras').children().length === 1 && $('.product-extras .w-dyn-empty').length) {
         $('.product-extras').hide();
     }
-    
+
+    // animation engine
+    document.addEventListener('DOMContentLoaded', function() {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('inView');
+                } else {
+                    entry.target.classList.remove('inView');
+                }
+            });
+        });
+        document.querySelectorAll('.onScroll').forEach(element => {
+            observer.observe(element);
+        });
+    });
 
 }); // end of document ready
