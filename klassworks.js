@@ -357,6 +357,8 @@ $(document).ready(function () {
     }
 
     // animation engine
+    $('section').css('opacity', '0');
+    $('section').css('transform', 'translateY(100px');
     document.addEventListener('DOMContentLoaded', function() {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
