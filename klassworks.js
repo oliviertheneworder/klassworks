@@ -344,7 +344,7 @@ $(document).ready(function () {
         handleProductGallery();
     }
 
-    // Alternative Handeling
+    // Show and Hide elements based on the presence of .w-dyn-empty class
 
     // if .alternative-wrapper has .w-dyn-empty, hide the .alternative-wrapper
     if ($('.alternative-wrapper .w-dyn-empty').length) {
@@ -356,9 +356,9 @@ $(document).ready(function () {
         $('.product-extras').hide();
     }
 
-    // if .w-dyn-list has 1 child and this child has a class = .w-dyn-empty, hide .w-dyn-list
-    if ($('.w-dyn-list').children().length === 1 && $('.w-dyn-list .w-dyn-empty').length) {
-        $('.w-dyn-list').hide();
-    }
+    // if .w-dyn-empty then hide it's parent
+    $('.w-dyn-empty').each(function () {
+        $(this).parent().hide();
+    });
 
 }); // end of document ready
