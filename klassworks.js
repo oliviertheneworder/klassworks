@@ -351,9 +351,14 @@ $(document).ready(function () {
         $('.alternative-wrapper').hide();
     }
 
-    // if .product-extras has 1 child and this child has a class = .w-dyn-empty, hide the .product-extras
+    // if .product-extras has 1 child and this child has a class = .w-dyn-empty, hide .product-extras
     if ($('.product-extras').children().length === 1 && $('.product-extras .w-dyn-empty').length) {
         $('.product-extras').hide();
+    }
+
+    // if .w-dyn-list has 1 child and this child has a class = .w-dyn-empty, hide .w-dyn-list
+    if ($('.w-dyn-list').children().length === 1 && $('.w-dyn-list .w-dyn-empty').length) {
+        $('.w-dyn-list').hide();
     }
 
 }); // end of document ready
