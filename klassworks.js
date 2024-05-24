@@ -344,4 +344,11 @@ $(document).ready(function () {
         handleProductGallery();
     }
 
+    // Alternative Handeling
+
+    // if .alternative-wrapper has .w-dyn-empty, hide the .alternative-wrapper
+    if ($('.alternative-wrapper .w-dyn-empty').length) {
+        $('.alternative-wrapper').hide();
+    }
+
 }); // end of document ready
