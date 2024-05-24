@@ -347,14 +347,14 @@ $(document).ready(function () {
     // Show and Hide elements based on the presence of .w-dyn-empty class
 
     // if .alternative-wrapper has .w-dyn-empty, hide the .alternative-wrapper
-    if ($('.alternative-wrapper .w-dyn-empty').length) {
-        $('.alternative-wrapper').hide();
-    }
+    // if ($('.alternative-wrapper .w-dyn-empty').length) {
+    //     $('.alternative-wrapper').hide();
+    // }
 
     // if .product-extras has 1 child and this child has a class = .w-dyn-empty, hide .product-extras
-    if ($('.product-extras').children().length === 1 && $('.product-extras .w-dyn-empty').length) {
-        $('.product-extras').hide();
-    }
+    // if ($('.product-extras').children().length === 1 && $('.product-extras .w-dyn-empty').length) {
+    //     $('.product-extras').hide();
+    // }
 
     // if .w-dyn-empty then hide it's parent
     $('.w-dyn-empty').each(function () {
