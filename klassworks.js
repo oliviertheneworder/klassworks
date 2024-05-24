@@ -356,36 +356,4 @@ $(document).ready(function () {
         $('.product-extras').hide();
     }
 
-    // animation engine
-    $('<style>')
-        .prop('type', 'text/css')
-        .html(`
-      .section {
-        opacity: 0;
-        transition: all 1s cubic-bezier(0.65, 0.05, 0.36, 1);
-        transform: translate3d(0, 0, 0);
-        transform: translateY(10vh);
-      }
-      .section.in-view {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    `)
-        .appendTo('head');
-    function checkIfInView() {
-        $('.section').each(function () {
-            var sectionOffset = $(this).offset().top;
-            var scrollPosition = $(window).scrollTop() + $(window).height();
-
-            if (scrollPosition > sectionOffset) {
-                $(this).addClass('in-view');
-            }
-        });
-    }
-    $(window).on('scroll resize', function () {
-        checkIfInView();
-    });
-    checkIfInView(); // Initial check
-    
-
 }); // end of document ready
