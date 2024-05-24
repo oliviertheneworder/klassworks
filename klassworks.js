@@ -351,4 +351,9 @@ $(document).ready(function () {
         $('.alternative-wrapper').hide();
     }
 
+    // if .product-extras has no visible elements, hide the .product-extras
+    if ($('.product-extras .w-condition-invisible').length === $('.product-extras .w-dyn-item').length) {
+        $('.product-extras').hide();
+    }
+
 }); // end of document ready
