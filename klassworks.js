@@ -351,9 +351,10 @@ $(document).ready(function () {
         $('.alternative-wrapper').hide();
     }
 
-    // if .product-extras has no visible elements, hide the .product-extras
-    if ($('.product-extras .w-condition-invisible').length === $('.product-extras .w-dyn-item').length) {
+    // if .product-extras has 1 child and this child has a class = .w-dyn-empty, hide the .product-extras
+    if ($('.product-extras').children().length === 1 && $('.product-extras .w-dyn-empty').length) {
         $('.product-extras').hide();
     }
+    
 
 }); // end of document ready
