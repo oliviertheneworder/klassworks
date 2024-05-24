@@ -357,21 +357,21 @@ $(document).ready(function () {
     }
 
     // animation engine
-    $('section').css('opacity', '0');
-    $('section').css('transform', 'translateY(100px');
-    document.addEventListener('DOMContentLoaded', function() {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('inView');
-                } else {
-                    entry.target.classList.remove('inView');
-                }
-            });
-        });
-        document.querySelectorAll('.onScroll').forEach(element => {
-            observer.observe(element);
-        });
-    });
+    // $('section').css('opacity', '0');
+    // $('section').css('transform', 'translateY(100px');
+    // document.addEventListener('DOMContentLoaded', function() {
+    //     const observer = new IntersectionObserver(entries => {
+    //         entries.forEach(entry => {
+    //             if (entry.isIntersecting) {
+    //                 entry.target.classList.add('inView');
+    //             } else {
+    //                 entry.target.classList.remove('inView');
+    //             }
+    //         });
+    //     });
+    //     document.querySelectorAll('.onScroll').forEach(element => {
+    //         observer.observe(element);
+    //     });
+    // });
 
 }); // end of document ready
