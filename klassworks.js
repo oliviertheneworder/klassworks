@@ -348,7 +348,5 @@ $(document).ready(function () {
     $('.w-dyn-empty').each(function () {
         $(this).parent().hide();
     });
-
-    // checking
-
+    
 }); // end of document ready
