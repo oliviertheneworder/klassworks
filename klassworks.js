@@ -386,5 +386,6 @@ $(document).ready(function () {
         checkIfInView();
     });
     checkIfInView(); // Initial check
+    
 
 }); // end of document ready
