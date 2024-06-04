@@ -354,7 +354,7 @@ $(document).ready(function () {
         $('.gallery-grid-list').css('grid-template-columns', 'repeat(4, 1fr)');
         console.log('even');
     } else {
-        $('.gallery-grid-list').css('grid-template-columns', 'repeat(3, 1fr)');
+        $('.gallery-grid-list').css('grid-template-columns', 'repeat(5, 1fr)');
         console.log('odd');
     }
     
