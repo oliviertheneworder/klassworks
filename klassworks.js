@@ -357,5 +357,10 @@ $(document).ready(function () {
         $('.gallery-grid-list').css('grid-template-columns', 'repeat(5, 1fr)');
         console.log('odd');
     }
+
+    // if .product-extras has no direct childern that are visible then hide .product-extras
+    if ($('.product-extras').children(':visible').length === 0) {
+        $('.product-extras').hide();
+    }
     
 }); // end of document ready
