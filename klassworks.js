@@ -348,5 +348,12 @@ $(document).ready(function () {
     $('.w-dyn-empty').each(function () {
         $(this).parent().hide();
     });
+
+    // .gallery-grid-list has even number of children, then css grid columns should be 4 else 3
+    if ($('.gallery-grid-list').children().length % 2 === 0) {
+        $('.gallery-grid-list').css('grid-template-columns', 'repeat(4, 1fr)');
+    } else {
+        $('.gallery-grid-list').css('grid-template-columns', 'repeat(3, 1fr)');
+    }
     
 }); // end of document ready
