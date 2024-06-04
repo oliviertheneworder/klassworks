@@ -349,13 +349,9 @@ $(document).ready(function () {
         $(this).parent().hide();
     });
 
-    // .gallery-grid-list has even number of children, then css grid columns should be 4 else 3
-    if ($('.gallery-grid-list').children().length % 2 === 0) {
-        $('.gallery-grid-list').css('grid-template-columns', 'repeat(4, 1fr)');
-        console.log('even');
-    } else {
-        $('.gallery-grid-list').css('grid-template-columns', 'repeat(5, 1fr)');
-        console.log('odd');
+    // .gallery-grid-list has odd number of children, then hide the last child
+    if ($('.gallery-grid-list').children().length % 2 !== 0) {
+        $('.gallery-grid-list').children().last().hide();
     }
 
     // if .product-extras has no direct childern that are visible then hide .product-extras
