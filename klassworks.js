@@ -50,9 +50,9 @@ if (accoladesTextParts.length === 0) {
 }
 
 // Hide Gallery if no images are present
-if ($('.product-gallery').find('.empty-state').length > 0) {
-    $(this).hide();
-}
+// if ($('.product-gallery').find('.empty-state').length > 0) {
+//     $(this).hide();
+// }
 
 $('template').remove(); // remove all template elements
 $('#quote-basket').css('display', 'none'); // hide the quote basket initially
@@ -265,23 +265,23 @@ $(document).ready(function () {
     });
 
     // Function to update gallery thumb
-    function updateGalleryThumb() {
-        var firstImgSrc = $('.product-gallery img.gallery-img:first').attr('src');
-        $('.product-gallery .gallery-thumb').attr('src', firstImgSrc);
-    }
+    // function updateGalleryThumb() {
+    //     var firstImgSrc = $('.product-gallery img.gallery-img:first').attr('src');
+    //     $('.product-gallery .gallery-thumb').attr('src', firstImgSrc);
+    // }
 
     // Function to check if the product gallery has images and handle visibility
-    function handleProductGallery() {
-        if ($('.product-gallery img.gallery-img').length > 0) {
-            if ($('.product-gallery').is(':visible')) {
-                updateGalleryThumb();
-            }
-        } else {
-            $('.product-gallery').hide();
-        }
-    }
+    // function handleProductGallery() {
+    //     if ($('.product-gallery img.gallery-img').length > 0) {
+    //         if ($('.product-gallery').is(':visible')) {
+    //             updateGalleryThumb();
+    //         }
+    //     } else {
+    //         $('.product-gallery').hide();
+    //     }
+    // }
 
-    handleProductGallery();
+    // handleProductGallery();
 
     // Hide .product-configure if .vactary-wrapper and .dimensions-img-wrapper are not visible
     if (!$('.vactary-wrapper').is(':visible') && !$('.dimensions-img-wrapper').is(':visible')) {
@@ -293,16 +293,16 @@ $(document).ready(function () {
         $("#features-block").hide();
 
         // Move .product-gallery to .product-features and adjust styles
-        $(".product-gallery").appendTo(".product-features").css({
-            "display": "block",
-            "padding": "0"
-        });
+        // $(".product-gallery").appendTo(".product-features").css({
+        //     "display": "block",
+        //     "padding": "0"
+        // });
 
-        $(".button.gallery, .gallery-trigger").css({
-            "aspect-ratio": "auto",
-            "width": "100%",
-            "height": "100%"
-        });
+        // $(".button.gallery, .gallery-trigger").css({
+        //     "aspect-ratio": "auto",
+        //     "width": "100%",
+        //     "height": "100%"
+        // });
 
     }
 
@@ -311,16 +311,16 @@ $(document).ready(function () {
         $("#options-block").hide();
 
         // Move .product-gallery to .product-features and adjust styles
-        $(".product-gallery").appendTo(".product-features").css({
-            "display": "block",
-            "padding": "0"
-        });
+        // $(".product-gallery").appendTo(".product-features").css({
+        //     "display": "block",
+        //     "padding": "0"
+        // });
 
-        $(".button.gallery, .gallery-trigger").css({
-            "aspect-ratio": "auto",
-            "width": "100%",
-            "height": "100%"
-        });
+        // $(".button.gallery, .gallery-trigger").css({
+        //     "aspect-ratio": "auto",
+        //     "width": "100%",
+        //     "height": "100%"
+        // });
 
     }
 
@@ -330,18 +330,18 @@ $(document).ready(function () {
         $("#downloads-block").hide();
 
         // Move .product-gallery to .product-features and adjust styles
-        $(".product-gallery").appendTo(".product-features").css({
-            "display": "block",
-            "padding": "0"
-        });
+        // $(".product-gallery").appendTo(".product-features").css({
+        //     "display": "block",
+        //     "padding": "0"
+        // });
 
-        $(".button.gallery, .gallery-trigger").css({
-            "aspect-ratio": "auto",
-            "width": "100%",
-            "height": "100%"
-        });
+        // $(".button.gallery, .gallery-trigger").css({
+        //     "aspect-ratio": "auto",
+        //     "width": "100%",
+        //     "height": "100%"
+        // });
 
-        handleProductGallery();
+        // handleProductGallery();
     }
 
     // if .w-dyn-empty then hide it's parent
