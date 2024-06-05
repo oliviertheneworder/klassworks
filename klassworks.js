@@ -361,7 +361,7 @@ $(document).ready(function () {
 
     // if url contains /performance-seating, /visitor-conference-meeting, /multipurpose then change the anchor link of #nav-quote-button to #quote-request
     var url = window.location.pathname;
-    if (url === '/performance-seating' || url === '/visitor-conference-meeting' || url === '/multipurpose') {
+    if (url.includes('/performance-seating') || url.includes('/visitor-conference-meeting') || url.includes('/multipurpose')) {
         $('#nav-quote-button').attr('href', '#quote-request');
     }
     
