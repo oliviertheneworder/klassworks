@@ -363,6 +363,7 @@ $(document).ready(function () {
     var url = window.location.pathname;
     if (url.includes('/performance-seating') || url.includes('/visitor-conference-meeting') || url.includes('/multipurpose')) {
         $('#nav-quote-button').attr('href', '#quote-request');
+        console.log('URL contains:', url);
     }
     
 }); // end of document ready
