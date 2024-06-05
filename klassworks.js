@@ -358,5 +358,11 @@ $(document).ready(function () {
     if ($('.product-extras').children(':visible').length === 0) {
         $('.product-extras').hide();
     }
+
+    // if url contains /performance-seating, /visitor-conference-meeting, /multipurpose then change the anchor link of #nav-quote-button to #quote-request
+    var url = window.location.pathname;
+    if (url === '/performance-seating' || url === '/visitor-conference-meeting' || url === '/multipurpose') {
+        $('#nav-quote-button').attr('href', '#quote-request');
+    }
     
 }); // end of document ready
