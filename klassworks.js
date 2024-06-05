@@ -19,7 +19,7 @@ checkAndHide();
 var accoladesTextParts = [];
 
 // Check each attribute and push the corresponding text to the array in the order of Certifications, Guarantees, Awards
-if ($('[data-certificates]').length > 0) {
+if ($('[data-certification]').length > 0) {
     accoladesTextParts.push("Certifications");
 }
 if ($('[data-guarantees]').length > 0) {
