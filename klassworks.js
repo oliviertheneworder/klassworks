@@ -349,8 +349,8 @@ $(document).ready(function () {
         $(this).parent().hide();
     });
 
-    // .gallery-grid-list has odd number of children, then hide the last child
-    if ($('.gallery-grid-list').children().length % 2 !== 0) {
+    // .gallery-grid-list has odd number of children and more than 4 childern, then hide the last child
+    if ($('.gallery-grid-list').children().length % 2 !== 0 && $('.gallery-grid-list').children().length > 4) {
         $('.gallery-grid-list').children().last().hide();
     }
 
