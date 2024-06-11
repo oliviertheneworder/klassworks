@@ -1,4 +1,4 @@
-// Hide product dimensions if required elements are not visible
+var url = window.location.pathname;
 
 // Check if all elements are not visible
 var ids = ['#depth', '#width', '#height', '#seat-depth', '#seat-width', '#seat-height']; // Replace with your actual IDs
@@ -97,7 +97,6 @@ $(document).ready(function () {
 
         } else {
             // if page url is / ; /professionals ; /about then hide the quote basket
-            var url = window.location.pathname;
             if (url === '/' || url === '/home-2' || url === '/professionals' || url === '/about' || url === '/performance-seating' || url === '/delegation-seating' || url === '/multipurpose') {
                 $('#nav-quote-button').css('display', 'none');
                 $('.quote-count').css('display', 'none');
@@ -266,10 +265,14 @@ $(document).ready(function () {
     });
 
     // if URL contains capitano, then change the text of .material-heading.back to 'Shell' and .material-heading.seat to 'Cushions'
-    var url = window.location.pathname;
+
     if (url.includes('/capitano')) {
         $('.material-heading.back').text('Shell');
         $('.material-heading.seat').text('Cushions');
+    }
+    // if url contains /altair then change the text of .material-heading.back to 'Shell'
+    if (url.includes('/altair')) {
+        $('.material-heading.back').text('Shell');
     }
 
     // Function to update gallery thumb
@@ -368,7 +371,6 @@ $(document).ready(function () {
     }
 
     // if url contains /performance-seating, /visitor-conference-meeting, /multipurpose then change the anchor link of #nav-quote-button to #quote-request
-    var url = window.location.pathname;
     if (url.includes('/performance-seating') || url.includes('/visitor-conference-meeting') || url.includes('/multipurpose')) {
         $('#nav-quote-button').attr('href', '#quote-request');
         console.log('URL contains:', url);
