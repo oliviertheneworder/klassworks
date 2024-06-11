@@ -265,6 +265,13 @@ $(document).ready(function () {
         }
     });
 
+    // if URL contains capitano, then change the text of .material-heading.back to 'Shell' and .material-heading.seat to 'Cushions'
+    var url = window.location.pathname;
+    if (url.includes('/capitano')) {
+        $('.material-heading.back').text('Shell');
+        $('.material-heading.seat').text('Cushions');
+    }
+
     // Function to update gallery thumb
     // function updateGalleryThumb() {
     //     var firstImgSrc = $('.product-gallery img.gallery-img:first').attr('src');
