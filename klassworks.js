@@ -261,6 +261,7 @@ $(document).ready(function () {
         var value = $(this).val().toLowerCase();
         if (lightValues.includes(value)) {
             $(this).closest('.material-radio-button').find('svg').attr('fill', 'rgba(0,0,0,0.75)');
+            console.log('Light value:', value);
         }
     });
 
