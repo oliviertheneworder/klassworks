@@ -255,7 +255,7 @@ $(document).ready(function () {
     });
 
     // for each .material-radio-button input, check if the value is 'white', 'custom', or 'polished aluminium' and change the svg fill color
-    var lightValues = ['white', 'custom', 'polished aluminium', 'Bonded Leather White', 'Genuine Leather White'];
+    var lightValues = ['white', 'custom', 'polished aluminium', 'bonded leather white', 'genuine leather white'];
 
     $('.material-radio-button input').each(function () {
         var value = $(this).val().toLowerCase();
