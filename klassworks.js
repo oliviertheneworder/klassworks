@@ -271,31 +271,21 @@ $(document).ready(function () {
         $('.material-heading.seat').text('Cushions');
     }
 
-    // if url contains /altair then duplicate the second visible .material-wrapper before this second .material-wrapper (childern of .material-stack), then change the text of .material-heading.seat to 'Back', then change all childeren ids by adding -2, then change all custom attributes: name="Material-Seat" to name="Material-Back" and data-name="Material Seat" to data-name="Material Back", then all label for attribute add -2
+    // if url contains /altair then duplicate the second visible .material-wrapper before this second .material-wrapper (childern of .material-stack), then change the text of .material-heading.seat to 'Back', then change all childeren ids by adding -2, then change all custom attributes: name="Material-Seat" to name="Material-Back" and data-name="Material Seat" to data-name="Material Back", then all label for attribute add -2, then make sure that the radio buttons are part of a new group by changing the name attribute to Material-Back
     if (url.includes('/altair')) {
         var materialWrapper = $('.material-wrapper:visible').eq(1).clone();
-        materialWrapper.insertAfter($('.material-wrapper:visible').eq(1));
-        $('.material-wrapper:visible').eq(2).find('.material-heading.seat').text('Back');
-        $('.material-wrapper:visible').eq(2).find('*').each(function () {
-            var id = $(this).attr('id');
-            if (id) {
-                $(this).attr('id', id + '-2');
-            }
-            var name = $(this).attr('name');
-            if (name) {
-                $(this).attr('name', name.replace('Seat', 'Back'));
-            }
-            var dataName = $(this).attr('data-name');
-            if (dataName) {
-                $(this).attr('data-name', dataName.replace('Seat', 'Back'));
-            }
-            var forAttr = $(this).attr('for');
-            if (forAttr) {
-                $(this).attr('for', forAttr + '-2');
-            }
+        materialWrapper.insertAfter('.material-wrapper:visible').eq(1);
+        $('.material-wrapper:visible').eq(1).find('.material-heading.seat').text('Back');
+        $('.material-wrapper:visible').eq(1).find('*').each(function () {
+            $(this).attr('id', $(this).attr('id') + '-2');
+            $(this).attr('name', $(this).attr('name') + '-2');
+            $(this).attr('for', $(this).attr('for') + '-2');
+            $(this).attr('data-name', $(this).attr('data-name').replace('Seat', 'Back'));
         }
         );
+        $('.material-wrapper:visible').eq(1).find('input[type="radio"]').attr('name', 'Material-Back');
     }
+    
 
     // Function to update gallery thumb
     // function updateGalleryThumb() {
