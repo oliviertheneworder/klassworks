@@ -271,19 +271,32 @@ $(document).ready(function () {
         $('.material-heading.seat').text('Cushions');
     }
 
-    // if url contains /altair then duplicate the second visible .material-wrapper before this second .material-wrapper (childern of .material-stack), then change the text of .material-heading.seat to 'Back', then change all childeren ids by adding -2, then change all custom attributes: name="Material-Seat" to name="Material-Back" and data-name="Material Seat" to data-name="Material Back", then all label for attribute add -2, then make sure that the radio buttons are part of a new group by changing the name attribute to Material-Back
+    // if url contains /altair, change the fist visible .material-wrapper's radio-button group to Material-Shell and $('.material-heading.back').text('Shell');,then duplicate the second visible .material-wrapper before this second .material-wrapper (childern of .material-stack), then change the text of .material-heading.seat to 'Back', then change all childeren ids by adding -2, then change all custom attributes: name="Material-Seat" to name="Material-Back" and data-name="Material Seat" to data-name="Material Back", then all label for attribute add -2, then make sure that the radio buttons are part of a new group by changing the name attribute to Material-Back
     if (url.includes('/altair')) {
-        var materialWrapper = $('.material-wrapper:visible').eq(1).clone();
-        materialWrapper.insertAfter('.material-wrapper:visible').eq(1);
-        $('.material-wrapper:visible').eq(1).find('.material-heading.seat').text('Back');
-        $('.material-wrapper:visible').eq(1).find('*').each(function () {
-            $(this).attr('id', $(this).attr('id') + '-2');
-            $(this).attr('name', $(this).attr('name') + '-2');
-            $(this).attr('for', $(this).attr('for') + '-2');
-            $(this).attr('data-name', $(this).attr('data-name').replace('Seat', 'Back'));
+        $('.material-wrapper:visible:first').find('.material-radio-button').attr('name', 'Material-Shell');
+        $('.material-heading.back').text('Shell');
+        var secondMaterialWrapper = $('.material-wrapper:visible').eq(1).clone();
+        secondMaterialWrapper.insertBefore('.material-wrapper:visible:eq(1)');
+        $('.material-heading.seat').text('Back');
+        $('.material-wrapper:visible:eq(1)').find('*').each(function () {
+            var id = $(this).attr('id');
+            var newId = id + '-2';
+            $(this).attr('id', newId);
+            var forAttr = $(this).attr('for');
+            var newForAttr = forAttr + '-2';
+            $(this).attr('for', newForAttr);
         }
         );
-        $('.material-wrapper:visible').eq(1).find('input[type="radio"]').attr('name', 'Material-Back');
+        $('.material-wrapper:visible:eq(1)').find('.material-radio-button').attr('name', 'Material-Back');
+        $('.material-wrapper:visible:eq(1)').find('.material-radio-button').each(function () {
+            var name = $(this).attr('name');
+            var newName = name.replace('Material-Seat', 'Material-Back');
+            $(this).attr('name', newName);
+            var dataName = $(this).attr('data-name');
+            var newDataName = dataName.replace('Material Seat', 'Material Back');
+            $(this).attr('data-name', newDataName);
+        }
+        );
     }
     
 
