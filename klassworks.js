@@ -270,9 +270,21 @@ $(document).ready(function () {
         $('.material-heading.back').text('Shell');
         $('.material-heading.seat').text('Cushions');
     }
-    // if url contains /altair then change the text of .material-heading.back to 'Shell'
+
+    // if url contains /altair then duplicate the first visible .material-wrapper after this first .material-wrapper (childern of .material-stack), then change the text of .material-heading.back to 'Shell', then change all childeren ids by adding -2, then change all data attributes that have 'Material-Back' to 'Material-Seat'
     if (url.includes('/altair')) {
-        $('.material-heading.back').text('Shell');
+        var materialWrapper = $('.material-wrapper:visible').first().clone();
+        materialWrapper.find('.material-heading.back').text('Shell');
+        materialWrapper.find('[id]').each(function () {
+            var id = $(this).attr('id');
+            $(this).attr('id', id + '-2');
+        });
+        materialWrapper.find('[data-material-back]').each(function () {
+            var dataMaterialBack = $(this).attr('data-material-back');
+            $(this).attr('data-material-seat', dataMaterialBack);
+        }
+        );
+        $('.material-wrapper:visible').first().after(materialWrapper);
     }
 
     // Function to update gallery thumb
