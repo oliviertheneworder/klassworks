@@ -271,20 +271,19 @@ $(document).ready(function () {
         $('.material-heading.seat').text('Cushions');
     }
 
-    // if url contains /altair then duplicate the first visible .material-wrapper after this first .material-wrapper (childern of .material-stack), then change the text of .material-heading.back to 'Shell', then change all childeren ids by adding -2, then change all data attributes that have 'Material-Back' to 'Material-Seat'
+    // if url contains /altair then duplicate the second visible .material-wrapper before this second .material-wrapper (childern of .material-stack), then change the text of .material-heading.seat to 'Back', then change all childeren ids by adding -2, then change all data attributes that have 'Material-Seat' or 'Material Seat' to 'Material-Seat' or 'Material Back'
     if (url.includes('/altair')) {
-        var materialWrapper = $('.material-wrapper:visible').first().clone();
-        materialWrapper.find('.material-heading.back').text('Shell');
-        materialWrapper.find('[id]').each(function () {
+        var secondMaterialWrapper = $('.material-wrapper:visible').eq(1).clone();
+        $('.material-wrapper:visible').eq(1).before(secondMaterialWrapper);
+        $('.material-wrapper:visible').eq(1).find('.material-heading.seat').text('Back');
+        $('.material-wrapper:visible').eq(1).find('[id]').each(function () {
             var id = $(this).attr('id');
             $(this).attr('id', id + '-2');
         });
-        materialWrapper.find('[data-material-back]').each(function () {
-            var dataMaterialBack = $(this).attr('data-material-back');
-            $(this).attr('data-material-seat', dataMaterialBack);
-        }
-        );
-        $('.material-wrapper:visible').first().after(materialWrapper);
+        $('.material-wrapper:visible').eq(1).find('[data-material-seat]').each(function () {
+            $(this).attr('data-material-back', $(this).attr('data-material-seat'));
+            $(this).removeAttr('data-material-seat');
+        });
     }
 
     // Function to update gallery thumb
