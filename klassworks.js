@@ -264,15 +264,13 @@ $(document).ready(function () {
         }
     });
 
-    // if URL contains capitano, then change the text of .material-heading.back to 'Shell' and .material-heading.seat to 'Cushions'
-
-    if (url.includes('/capitano')) {
+    // if URL contains capitano, then change the text of .material-heading.back to 'Shell', then change radio button group names to Material-Shell, then .material-heading.seat to 'Cushions', then change radio button group names to Material-Cushions
+    if (url.includes('capitano')) {
         $('.material-heading.back').text('Shell');
+        $('.material-radio-button-group').attr('name', 'Material-Shell');
         $('.material-heading.seat').text('Cushions');
+        $('.material-radio-button-group').attr('name', 'Material-Cushions');
     }
-
-    // if url contains /altair,
-    
 
     // Function to update gallery thumb
     // function updateGalleryThumb() {
