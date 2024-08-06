@@ -333,24 +333,24 @@ $(document).ready(function () {
     }
 
     // Hide downloads block if all links are invisible
-    if ($("#downloads-list .downloads-link.w-condition-invisible").length === $("#downloads-list .downloads-link").length) {
+    // if ($("#downloads-list .downloads-link.w-condition-invisible").length === $("#downloads-list .downloads-link").length) {
 
-        $("#downloads-block").hide();
+    //     $("#downloads-block").hide();
 
-        // Move .product-gallery to .product-features and adjust styles
-        // $(".product-gallery").appendTo(".product-features").css({
-        //     "display": "block",
-        //     "padding": "0"
-        // });
+    //     // Move .product-gallery to .product-features and adjust styles
+    //     // $(".product-gallery").appendTo(".product-features").css({
+    //     //     "display": "block",
+    //     //     "padding": "0"
+    //     // });
 
-        // $(".button.gallery, .gallery-trigger").css({
-        //     "aspect-ratio": "auto",
-        //     "width": "100%",
-        //     "height": "100%"
-        // });
+    //     // $(".button.gallery, .gallery-trigger").css({
+    //     //     "aspect-ratio": "auto",
+    //     //     "width": "100%",
+    //     //     "height": "100%"
+    //     // });
 
-        // handleProductGallery();
-    }
+    //     // handleProductGallery();
+    // }
 
     // if .w-dyn-empty then hide it's parent
     $('.w-dyn-empty').each(function () {
