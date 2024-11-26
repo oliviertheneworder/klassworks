@@ -49,6 +49,10 @@ if (accoladesTextParts.length === 0) {
     $('#accolades-block').hide();
 }
 
+// Accolades Logos
+// move all .logo-accolade into .logo-accolade-wrap, then make visible all .logo-accolade
+$('.logo-accolade').appendTo('.logo-accolade-wrap').css('display', 'block');
+
 // Hide Gallery if no images are present
 // if ($('.product-gallery').find('.empty-state').length > 0) {
 //     $(this).hide();
